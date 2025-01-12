@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+ 
+{% block content %}
+{{ super() }}
+    <nav class="navbar">
+        <div class="logo-container">
+            <a href="/">
+                <i class="fa-solid fa-cube"></i>
+            </a>
+        </div>
+    </nav>
+
+    <div class="main-container">
+        <h1 class="title-text">Добро пожаловать. Какой режим выбрать?</h1>
+
+        <div class="list">
+            <a href="/p_yolov5sDetection" class="link">
+                <div class="item">
+                    <h2 class="item-title">Дозорный</h2>
+
+                    <div class="icon-container">
+                        <i class="fa-solid fa-eye icon"></i>
+                    </div>
+
+                    <p class="item-description"><span class="model-type">Профессиональный ИИ</span>
+                                                        Обнаружит всех мобов на вашем скриншоте из Minecraft</p>
+                </div>
+            </a>
+
+            <a href="/p_pretrainedClassification" class="link">
+                <div class="item">
+                    <h2 class="item-title">Передовой ученый</h2>
+
+                    <div class="icon-container">
+                        <i class="fa-solid fa-atom icon"></i>
+                    </div>
+
+                    <p class="item-description"><span class="model-type">Профессиональный ИИ</span><br>
+                                                Определит тип предмета на изображении</p>
+                </div>
+            </a>
+
+            <a href="/p_myClassification" class="link">
+                <div class="item">
+                    <h2 class="item-title">Ученый-любитель</h2>
+
+                    <div class="icon-container">
+                        <i class="fa-solid fa-flask icon"></i>
+                    </div>
+
+                    <p class="item-description"><span class="model-type">ИИ личной разработки</span><br>
+                                                Расскажет, предмета какого типа на вашем изображении</p>
+                </div>
+            </a>
+        </div>
+    </div>
+{% endblock %}

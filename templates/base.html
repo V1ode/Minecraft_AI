@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link type="text/css" href="{{ url_for('static', filename='css/styles.css')}}" rel="stylesheet" />
+    <script src="https://kit.fontawesome.com/0536f38ce6.js" crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    {% block title -%}
+        {% if title %}
+                 <title> {{title}} </title>
+        {% else %}
+                 <title>Главная</title>
+        {% endif %}
+    {% endblock %}
+</head>
+<body>
+    {% block content -%}
+    {% endblock -%}
+</body>
+</html>

@@ -1,0 +1,372 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #070708;
+}
+
+.main-container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 80px;
+}
+
+.navbar {
+    height: 80px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 45px;
+}
+
+.logo-container i {
+    color: #7E7E8F;
+    transform: scale(5, 5);
+    transitionsition: all ease-in-out .2s;
+}
+
+.logo-container:hover i {
+    color: #b2b2c6;
+    transition: all ease-in-out .2s;
+}
+
+.title-text {
+    font-family: "Inter", sans-serif;
+    font-weight: 800;
+    font-size: 30px;
+    color: white;
+
+    margin-top: 50px;
+}
+
+.list {
+    height: 500px;
+
+    margin-top: 180px;
+    display: flex;
+    gap: 100px;
+}
+
+.item {
+    width: 280px;
+    height: 370px;
+    background-color: #1a1a1f;
+    border-width: 0px;
+    border-radius: 25px;
+    transition: all ease-in-out .2s;
+
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 15px;
+}
+
+.item:hover {
+    transform: translateY(-55px) scale(1.15) translateZ(0);
+}
+
+.link {
+    height: 400px;
+    font-family: Inter, sans-serif;
+    color: blue;
+    text-decoration: none;
+}
+
+.item-title {
+    color: #7E7E8F;
+    text-align: center;
+
+    margin-bottom: 12px;
+}
+
+.img-container {
+    width: 480px;
+    height: 480px;
+}
+
+.img-container img {
+    width: 100%;
+    height: 100%;
+}
+
+.icon-container {
+    width: 255px;
+    height: 225px;
+}
+
+.icon {
+    color: #54548F;
+    transform: scale(12, 12) translate(10px, 10px);
+}
+
+.item-description {
+    color: white;
+    opacity: 0;
+    transition: all ease-in-out .15s;
+
+    margin-top: 15px;
+}
+
+.link:hover .item-description {
+    opacity: 1;
+    transition: all ease-in-out .15s;
+}
+
+.model-type {
+    color: #7B548F;
+
+    margin-bottom: 5px;
+}
+
+.result-container {
+    width: 500px;
+    height: 500px;
+    border: 10px dashed #313131;
+    border-radius: 9px;
+}
+
+.img-form-container {
+    margin-top: 50px;
+}
+
+.img-form-container form {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.inputs-container {
+    width: 480px;
+    height: 180px;
+    border-radius: 25px;
+    background-color: #232329;
+
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.file-input-block {
+    width: 200px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.input-file input[type=file] {
+	position: absolute;
+	z-index: -1;
+	opacity: 0;
+	display: block;
+	width: 0;
+	height: 0;
+}
+
+.input-file-btn {
+    width: 140px;
+    color: rgb(255 255 255);
+    font-family: Inter, sans-serif;
+    border-width: 0px;
+    background-color: #2247c8f7;
+	border-radius: 4px;
+	transition: all ease-in-out 0.2s;
+	display: inline-block;
+	vertical-align: middle;
+	text-align: center;
+
+	padding: 10px 20px;
+}
+
+.input-file input[type=file]:focus + .input-file-btn {
+	box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25);
+}
+
+.input-file:hover .input-file-btn {
+	background-color: #6da0ff;
+	opacity: 0.7;
+	cursor: pointer;
+	transition: all ease-in-out 0.2s;
+}
+
+.input-file:active .input-file-btn {
+	background-color: #54548F;
+}
+
+.input-file input[type=file]:disabled + .input-file-btn {
+	background-color: #eee;
+}
+
+.metrics-input-block {
+    width: 200px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+}
+
+.metric {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+.metric-text {
+    color: white;
+    font-family: "Inter", sans-serif;
+}
+
+.multiselect {
+    width: 190px;
+    height: 20px;
+    font-size: 16px;
+    font-family: "Inter", sans-serif;
+    border-width: 0px;
+    overflow-y: hidden;
+    transition: all ease-in-out 0.2s;
+}
+
+.multiselect optgroup {
+    display:inline-table;
+}
+
+.multiselect optgroup:nth-child(1) {
+    margin-left: 10px;
+    margin-right: 20px;
+}
+
+.multiselect:focus {
+    width: 190px;
+    height: 85px;
+    outline: none;
+    position: absolute;
+    overflow-y: disabled;
+    transition: all ease-in-out 0.2s;
+}
+
+output {
+    font-size: 20px;
+    color:  #22A8C7;
+}
+
+.metric input[type=range] {
+    width: 190px;
+}
+
+.form-btn {
+    font-size: 20px;
+    background-color: #4F4F8F;
+    border-width: 0px;
+    border-radius: 4px;
+    transition: all ease-in-out 0.2s;
+
+    padding: 15px 30px;
+    margin-top: 25px;
+}
+
+.form-btn:hover {
+    cursor: pointer;
+    opacity: 0.7;
+    transition: all ease-in-out 0.2s;
+}
+
+.form-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.input-swap-container {
+    background-color: #161618;
+
+    display: flex;
+    align-items: center;
+}
+
+.big-btn {
+    width: 245px;
+    font-size: 20px;
+    border-radius: 16px;
+
+    padding: 30px 60px;
+    margin-left: 120px;
+}
+
+.classification-result-container {
+    width: 600px;
+    height: 175px;
+    background-color: #343463;
+    border-radius: 25px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 60px;
+}
+
+.classification-result-highlighted {
+    color: #6c4d41;
+}
+
+.waiting-img-container {
+    width: inherit;
+    height: inherit;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.text-request {
+    font-family: "Inter", sans-serif;
+    font-size: 25px;
+    color: white;
+}
+
+.input-file-hidden {
+    opacity: 0;
+    position: absolute;
+    top: 350px;
+    left: 945px;
+    transition: all ease-in-out .2s;
+}
+
+.result-container:hover {
+
+}
+
+.result-container:hover .input-file-hidden {
+    opacity: 1;
+    transition: all ease-in-out .2s;
+}
+
+.img-input-hidden {
+    background-color: black;
+    opacity: 0.8;
+    margin-left: 0px;
+    transition: all ease-in-out .2s;
+}
+
+.result-container:hover .img-input-hidden {
+    transition: all ease-in-out .2s;
+}
+
+.input-file:hover .img-input-hidden{
+    background-color: black;
+    opacity: 0.6;
+    transition: all ease-in-out .2s;
+}

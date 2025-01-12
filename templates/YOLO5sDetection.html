@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+ 
+{% block content %}
+{{ super() }}
+<nav class="navbar">
+    <div class="logo-container">
+        <a href="/">
+            <i class="fa-solid fa-cube"></i>
+        </a>
+    </div>
+</nav>
+
+<div class="main-container">
+    <div class="result-container">
+        <div class="waiting-img-container">
+            <p class="text-request">Результат появится после того,<br>
+                                    как вы добавите и просканируете<br>
+                                    изображение</p>
+        </div>
+    </div>
+
+    <div class="img-form-container">
+        <form enctype="multipart/form-data" action="/p_yolov5sDetection" method="POST">
+            <div class="inputs-container">
+                <div class="file-input-block">
+                    <label class="input-file">
+                        <input type="file" name="img" placeholder="Ваш скриншот Minecraft" class="img-input">
+                        <span class="input-file-btn">Выберите изображение</span>
+                    </label>
+                </div>
+
+                <div class="metrics-input-block">
+                    <div class="metric">
+                        <p class="metric-text">Кого ищем на картинке</p>
+                        <select multiple class="multiselect" name="classes" placeholder="Выберите мобов">
+                            {% for classes in grouped_classes %}
+                                <optgroup label="">
+                                    {% for class in classes %}
+                                        <option value="{{ class }}">{{ class }}</option>
+                                    {% endfor %}
+                                </optgroup>
+                            {% endfor %}
+                        </select>
+                    </div>
+
+                    <div class="metric">
+                        <p class="metric-text">Уверенность нахождения</p>
+                        <input type="range" name="confidence" value="0.5" step="0.05" min="0.05" max="1" oninput="this.nextElementSibling.value = this.value">
+                        <output>0.5</output>
+                    </div>
+                </div>
+            </div>
+            <input type="submit" class="form-btn" value="Просканировать изображение">
+        </form>
+    </div>
+</div>
+
+{% endblock %}

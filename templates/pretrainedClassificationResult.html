@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+ 
+{% block content %}
+{{ super() }}
+<nav class="navbar">
+    <div class="logo-container">
+        <a href="/">
+            <i class="fa-solid fa-cube"></i>
+        </a>
+    </div>
+</nav>
+
+<div class="main-container">
+    <div class="result-container input-swap-container">
+        <form enctype="multipart/form-data" action="/p_pretrainedClassification" method="POST">
+            <label class="input-file input-file-hidden">
+                <input type="file" name="img" placeholder="Ваш скриншот Minecraft" class="img-input" onchange="form.submit()">
+                <span class="input-file-btn big-btn img-input-hidden">Выберите изображение</span>
+            </label>
+        </form>
+
+        <div class="img-container">
+            <img src="{{ url_for('static', filename='media/pretrained_classification_blank.jpg') }}" class="result-img">
+        </div>
+    </div>
+
+    <div class="classification-result-container">
+        <h1>На изображении  <span class="classification-result-highlighted">{{class_model}}</span> </h1>
+    </div>
+</div>
+
+
+
+
+{% endblock %}

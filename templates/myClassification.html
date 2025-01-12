@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+ 
+{% block content %}
+{{ super() }}
+<nav class="navbar">
+    <div class="logo-container">
+        <a href="/">
+            <i class="fa-solid fa-cube"></i>
+        </a>
+    </div>
+</nav>
+
+<div class="main-container">
+    <div class="result-container input-swap-container">
+        <form enctype="multipart/form-data" action="/p_myClassification" method="POST">
+            <label class="input-file">
+                <input type="file" name="img" placeholder="Ваш скриншот Minecraft" class="img-input" onchange="form.submit()">
+                <span class="input-file-btn big-btn">Выберите изображение</span>
+            </label>
+        </form>
+    </div>
+</div>
+{% endblock %}
