@@ -1,16 +1,11 @@
 import math
-
-import numpy as np
 import os
-import pandas as pd
 import tensorflow as tf
-from tensorflow import keras
 import matplotlib.pyplot as plt
 
 
 PATH = 'C:/Users/Roma/PycharmProjects/ML_3models/static/media/'
 train_dir = os.path.join(PATH, 'train')
-# validation_dir = os.path.join(PATH, 'valid')
 
 BATCH_SIZE = 32
 IMG_SIZE = (96, 96)
@@ -38,12 +33,6 @@ data_augmentation = tf.keras.Sequential([
     tf.keras.layers.RandomContrast(0.7),
     tf.keras.layers.RandomContrast(0.9),
 ])
-
-# tf.image.rgb_to_grayscale(),
-# tf.image.adjust_gamma(gamma=0.3, gain=1),
-# tf.image.adjust_contrast(2.),
-# tf.image.adjust_saturation(0.7),
-# tf.image.adjust_brightness(delta=0.5),
 
 preprocess_input = tf.keras.applications.mobilenet_v2.preprocess_input
 
@@ -124,5 +113,3 @@ predictions = int(math.floor(float(predictions[0]*len(classes))))
 print(
     f"Это изображение похоже на {classes[predictions]}"
     )
-
-# decoded_predictions = tf.keras.applications.mobilenet_v2.decode_predictions(predictions)

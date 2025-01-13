@@ -1,9 +1,5 @@
 import matplotlib.pyplot as plt
-import numpy as np
-import os
-import PIL
 import tensorflow as tf
-from tensorflow import keras
 from tensorflow.keras import layers
 from tensorflow.keras.models import Sequential
 import pathlib
@@ -62,8 +58,6 @@ history = model.fit(
   validation_data=val_ds,
   epochs=epochs
 )
-
-# test_loss, test_accuracy = model.evaluate(test_ds)
 
 acc = history.history['accuracy']
 val_acc = history.history['val_accuracy']

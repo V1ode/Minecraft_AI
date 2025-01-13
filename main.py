@@ -1,10 +1,7 @@
 import flask
 import numpy as np
 import math
-
-
 import cv2
-
 from flask import Flask, render_template, request, jsonify, Response
 from keras.src.saving import load_model
 import tensorflow as tf
@@ -99,6 +96,7 @@ own_model = load_model("saved_models/myModel500.keras")
 YOLOv5s_model = torch.hub.load('ultralytics/yolov5', model="custom", path="model/best.pt", force_reload=True)
 
 
+# Роуты
 
 @app.route("/")
 def index():
